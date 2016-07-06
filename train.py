@@ -63,8 +63,9 @@ def main():
                 for ind in range(args.gen_count):
                     noise = np.random.random(size=(batch_size, noise_size))
                     cost = lstm_gan.train_gen_on_batch(session, noise)
-                    sent = lstm_gan.generate_sent(session, np.random.random(size=(noise_size, )))
-                    print(' '.join(index2word[i] for i in sent))
+                    if args.gen_sent:
+                        sent = lstm_gan.generate_sent(session, np.random.random(size=(noise_size, )))
+                        print(' '.join(index2word[i] for i in sent))
                     print("Processed {} noise inputs with train cost {}".format((ind+1)*batch_size, cost))
                 
                 offset += batch_size*args.disc_count

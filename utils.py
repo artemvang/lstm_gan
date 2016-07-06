@@ -17,6 +17,7 @@ def get_args():
     parser.add_argument("--grad_clip", default=1., help="Gradient clipping", type=float)
     parser.add_argument("--noise_size", default=32, help="Size of input noise into generator", type=int)
     parser.add_argument("-s", "--save_model", help="Save session", action="store_true")
+    parser.add_argument( "--gen_sent", help="Generate sample sentences on generator training", action="store_true")
     parser.add_argument("--load_model", help="Load session from file", action="store_true")
     parser.add_argument("--lr", default=1e-4, help="Learning rate for Adam optimizer", type=float)
     args = parser.parse_args()
