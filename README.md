@@ -1,4 +1,5 @@
-# LSTM-GAN
+# LSTM-GAN (Testing)
+
 Implementation of LSTM GAN for russian twitter posts generating.
 Model train on this [dataset](http://study.mokoron.com/).
 
